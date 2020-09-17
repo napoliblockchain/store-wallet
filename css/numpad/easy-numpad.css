@@ -1,0 +1,142 @@
+.easy-get:hover {
+    cursor: pointer;
+}
+
+.easy-numpad-frame {
+    position: relative;
+    top: -218px;
+    left: 10%;
+
+    width: 80%;
+    height: auto !important;
+    z-index: 999999;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    background-color: rgba(236,240,241,0.8);
+
+    padding: 0px 0px 0px 0px;
+    /* margin-left: -18px; */
+}
+.pin-newframe-numpad{
+    margin-left: -15%;
+    margin-right: -15%;
+}
+.easy-numpad-frame-importo {
+    position: relative;
+    top: -218px;
+    left: 10%;
+
+    width: 80%;
+    height: auto !important;
+    z-index: 999999;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    background-color: rgba(236,240,241,0.8);
+
+    padding: 0px 0px 0px 0px;
+    font-size: 0.75em;   /* GRANDEZZA DEL CARATTERE DA VISUALIZZARE NUMPAD */ */
+    /* margin-left: -18px; */
+}
+
+
+a#easy-numpad-close {
+    position: absolute;
+    right: -54px;
+    top: -56px;
+    background-color: #f44336;
+    color: #fff;
+    line-height: 1;
+    padding: 20px 21px;
+}
+.easy-numpad-output-container {
+    position: relative;
+    width: 100%;
+}
+.easy-numpad-output {
+    background-color: #e5e5e5;
+    height: 84px;
+    min-height: 84px;
+    box-sizing: border-box;
+    margin: 0px;
+    text-align: center;
+    color: #222;
+    margin-right: 20px;
+    width: 100%;
+}
+#easy-numpad-output {
+    background-color: #e5e5e5;
+    height: 84px;
+    min-height: 84px;
+    box-sizing: border-box;
+    margin: 0px;
+    text-align: center;
+    color: #222;
+    margin-right: 20px;
+    width: 100%;
+    font-size: 0.75em;
+}
+
+.easy-numpad-container {
+    position: relative;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    padding: 1px;
+	font-size: 4em;   /* GRANDEZZA DEL CARATTERE DA VISUALIZZARE NUMPAD */ */
+
+}
+.easy-numpad-number-container > table {
+    width: calc(100% + 6px);
+    position: relative;
+    left: -3px;
+    top: -25px;
+
+}
+.easy-numpad-number-container > table td {
+    border: 1px solid  white;
+}
+.easy-numpad-number-container > table span {
+    display: block;
+    padding: 0px 0px 0px 0px;
+	background-color: rgba(28, 46, 126, 0.8);
+    color: #fff;
+    text-align: center;
+}
+
+.easy-numpad-number-container > table span:hover {
+    background-color: #616161;
+}
+
+.easy-numpad-number-container .del {
+    /* background-color: #ef5350; */
+    /* color: #ef5350; */
+}
+.easy-numpad-number-container .done {
+    position: relative;
+    top: -20px;
+	background-color: #388E3C;
+    font-size: .7em;
+}
+.easy-numpad-number-container .token {
+    position: relative;
+    top: -20px;
+    background-color: rgba(74, 135, 238, 1);
+    font-size: .7em;
+}
+
+
+
+@media only screen and (min-width : 300px) and (max-width : 767px) {
+    a#easy-numpad-close {
+        right: 0px
+    }
+}
