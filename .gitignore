@@ -1,3 +1,8 @@
 assets/*
-protected/runtime/*
+!assets/.gitignore
 protected/log/*
+!protected/log/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/

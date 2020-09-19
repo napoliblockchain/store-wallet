@@ -52,7 +52,7 @@ $form=$this->beginWidget('CActiveForm', array(
 				<?php echo $form->error($model,'reCaptcha',array('class'=>'alert alert-danger')); ?>
 			</div>
 			<?php echo CHtml::submitButton(Yii::t('lang','Recovery'), array('class' => 'au-btn au-btn--block au-btn--blue m-b-20','id'=>'accedi-button')); ?>
-			<?php echo Logo::footer(); ?>
+			<?php echo Logo::footer('#333'); ?>
 		</div>
 
 	</div>

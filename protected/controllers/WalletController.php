@@ -1,10 +1,12 @@
 <?php
+Yii::import('libs.crypt.crypt');
+Yii::import('libs.NaPacks.Settings');
+Yii::import('libs.NaPacks.WebApp');
+Yii::import('libs.NaPacks.Logo');
+Yii::import('libs.ethereum.eth');
+
 require_once Yii::app()->params['libsPath'] . '/ethereum/web3/vendor/autoload.php';
 use Web3\Web3;
-use Sop\CryptoTypes\Asymmetric\EC\ECPublicKey;
-use Sop\CryptoTypes\Asymmetric\EC\ECPrivateKey;
-use Sop\CryptoEncoding\PEM;
-use kornrunner\Keccak;
 
 class WalletController extends Controller
 {
@@ -282,7 +284,7 @@ class WalletController extends Controller
 				$istituto->wallet_address = $wallets->wallet_address;
 				$istituto->save();
 			}
-			
+
 			//assegno il nuovo indirizzo all'utente
 			Settings::saveUser($wallets->id_user,$wallets->attributes,array('id_wallet'));
 			$result = array(

@@ -1,7 +1,6 @@
-# Store  Wallet
+# Napay TTS Store Wallet
 
-### a Fork of Napay TTS Wallet
-
+### Progressive Web App
 
 [![Screenshot of NaPay TTS PWA app](css/images/screenshot.png)](https://wallet.napoliblockchain.it)
 
@@ -13,6 +12,7 @@
 ## Authors
 
 - [Sergio Casizzone](https://sergiocasizzone.it)
+- [Antonio Della Porta]
 
 ## Features
 
@@ -22,9 +22,11 @@
     - [x] `Token` & `Gas` Balance
     - [x] Token send & receive
     - [x] Gas receive only feature
-    - [x] Available in Italian and English languages
+    - [ ] Available in many languages
     - [x] Transactions list
     - [x] Transaction details
+    - [ ] Multi wallet manager (coming soon)
+    - [x] Select predefined wallet to use
     - [x] Blockchain sync & rescan
 
 **PWA**
@@ -47,7 +49,7 @@
 
 ## Security
 
-If you discover or learn about a potential error, weakness, or threat that can compromise the security of Wallet, we ask you to keep it confidential and [submit your concern directly to the Wallet TTS security team](mailto:info@napoliblockchain.it?subject=[GitHub]%20Store%20Wallet%20Security).
+If you discover or learn about a potential error, weakness, or threat that can compromise the security of Wallet, we ask you to keep it confidential and [submit your concern directly to the Wallet TTS security team](mailto:info@napoliblockchain.it?subject=[BitBucket]%20Wallet%20Security).
 
 
 ## License
@@ -55,3 +57,5 @@ If you discover or learn about a potential error, weakness, or threat that can c
 This project is open source under the MIT license, which means you have full access to the source code and can modify it to fit your own needs. See [LICENSE](LICENSE) for more information.
 
 [MIT](LICENSE) © Sergio Casizzone
+
+[issues]: https://bitbucket.org/jambtc/wallet-tts/issues

@@ -2,8 +2,8 @@
 $serviceWorker = <<<JS
 
     // quando cambi questi valori modificali anche in sw.js
-    var CACHE_STATIC_NAME = 'wallet-tts-static-v0.4.006';
-    var CACHE_DYNAMIC_NAME = 'wallet-tts-dynamic-v0.4.006';
+    var CACHE_STATIC_NAME = 'store-wallet-static-v0.4.006';
+    var CACHE_DYNAMIC_NAME = 'store-wallet-dynamic-v0.4.006';
 
     function trimCache(cacheName, maxItems) {
     	caches.open(cacheName)

@@ -1,4 +1,4 @@
-var dbPromise = idb.open('wallet-tts', 1, function(db) {
+var dbPromise = idb.open('store-wallet', 1, function(db) {
 
 	// //store dati per richiesta sincronizzazione balance
 	// if (!db.objectStoreNames.contains('sync-getbalance-eth'))

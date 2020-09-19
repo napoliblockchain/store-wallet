@@ -1,5 +1,4 @@
 <?php
-
 $libsPath = dirname(__FILE__).DIRECTORY_SEPARATOR.'../../../packages';
 Yii::setPathOfAlias('libs', $libsPath);
 

@@ -120,7 +120,7 @@ $reCaptcha2PublicKey = $settings->reCaptcha2PublicKey;
 
 
 			<?php echo CHtml::submitButton(Yii::t('lang','Submit'), array('class' => 'au-btn au-btn--block au-btn--blue m-b-20')); ?>
-			<?php echo Logo::footer(); ?>
+				<?php echo Logo::footer('#333'); ?>
 		</div>
 	</div>
 </div>

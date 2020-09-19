@@ -6,11 +6,16 @@ fi
 if [ ! -d "protected/qrcodes" ]; then
     mkdir protected/qrcodes
 fi
+#la cartella uploads serve a caricare i file nel bug form
+if [ ! -d "uploads" ]; then
+    mkdir uploads
+fi
 
 git stash
 git pull
 
 chown -R www-data:www-data assets/
+chown -R www-data:www-data uploads/
 chown -R www-data:www-data protected/runtime/
 chown -R www-data:www-data protected/qrcodes/
 chown -R www-data:www-data protected/log/

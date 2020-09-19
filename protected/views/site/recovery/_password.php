@@ -70,7 +70,7 @@ $form=$this->beginWidget('CActiveForm', array(
 				<?php echo $form->error($model,'password_confirm',array('class'=>'alert alert-danger')); ?>
 			</div>
 			<?php echo CHtml::submitButton(Yii::t('lang','Confirm'), array('class' => 'au-btn au-btn--block au-btn--blue m-b-20','name'=>'confirm-button')); ?>
-			<?php echo Logo::footer(); ?>
+				<?php echo Logo::footer('#333'); ?>
 		</div>
 
 	</div>

@@ -3,8 +3,8 @@ importScripts('src/js/idb.js');
 importScripts('src/js/utility.js');
 
 // quando cambi questi valori modificali anche in view/layouts/js_sw.php
-var CACHE_STATIC_NAME = 'wallet-tts-static-v0.4.006';
-var CACHE_DYNAMIC_NAME = 'wallet-tts-dynamic-v0.4.006';
+var CACHE_STATIC_NAME = 'store-wallet-static-v0.4.006';
+var CACHE_DYNAMIC_NAME = 'store-wallet-dynamic-v0.4.006';
 var STATIC_FILES = [
 	'/',
 	//'index.php',
