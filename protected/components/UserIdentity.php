@@ -88,36 +88,41 @@ class UserIdentity extends CUserIdentity
 				}
 				$emptysocial = explode('@',$record->email);
 
+
+				// set this flag true if you don't want check payuments
+				$tmpFlagDisableCheckPayments = true;
 				/*
 				*	VERIFICA SE IL SOCIO HA PAGATO LA QUOTA D'ISCRIZIONE
 				*/
-				$timestamp = time();
-				$criteria = new CDbCriteria();
-				$criteria->compare('id_user',$record->id_user, false);
+				// ma se SEi amministratore non fai il controllo
+				if ($UserPrivileges[$record->id_users_type] != 20 && $tmpFlagDisableCheckPayments == false){
+					$timestamp = time();
+					$criteria = new CDbCriteria();
+					$criteria->compare('id_user',$record->id_user, false);
 
-				$provider = Pagamenti::model()->Paid()->OrderByIDDesc()->findAll($criteria);
-				if ($provider === null){
-					//$expiration_membership = $timestamp;
-					$this->errorCode=self::ERROR_USERNAME_NOT_PAYER;
-					$save->WriteLog('wallet-tts','useridentity','authenticate','User not payer: '.$this->username);
-					return !$this->errorCode;
-				}else{
-					$provider = (array) $provider;
-					if (count($provider) == 0)
-						$expiration_membership = 1;
-					else
-						$expiration_membership = strtotime($provider[0]->data_scadenza);
+					$provider = Pagamenti::model()->Paid()->OrderByIDDesc()->findAll($criteria);
+					if ($provider === null){
+						//$expiration_membership = $timestamp;
+						$this->errorCode=self::ERROR_USERNAME_NOT_PAYER;
+						$save->WriteLog('wallet-tts','useridentity','authenticate','User not payer: '.$this->username);
+						return !$this->errorCode;
+					}else{
+						$provider = (array) $provider;
+						if (count($provider) == 0)
+							$expiration_membership = 1;
+						else
+							$expiration_membership = strtotime($provider[0]->data_scadenza);
+					}
+					// scadenza entro il 31 gennaio per provvedere all'iscrizione (se la data_scadenza
+					// è al 31 dicembre)
+					// temporaneamente posticipato al 28 febbraio
+					$expiration_membership += (31+28) *24*60*60;
+					if ($expiration_membership <= $timestamp){
+						$this->errorCode=self::ERROR_USERNAME_NOT_MEMBER;
+						$save->WriteLog('wallet-tts','useridentity','authenticate','User not member: '.$this->username);
+						return !$this->errorCode;
+					}
 				}
-				// scadenza entro il 31 gennaio per provvedere all'iscrizione (se la data_scadenza
-				// è al 31 dicembre)
-				// temporaneamente posticipato al 28 febbraio
-				$expiration_membership += (31+28) *24*60*60;
-				if ($expiration_membership <= $timestamp){
-					$this->errorCode=self::ERROR_USERNAME_NOT_MEMBER;
-					$save->WriteLog('wallet-tts','useridentity','authenticate','User not member: '.$this->username);
-					return !$this->errorCode;
-				}
-
 				$save->WriteLog('wallet-tts','useridentity','authenticate','User '.$this->username. ' logged in.');
 
 				$institute = Institutes::model()->findByAttributes(['id_user'=>$record->id_user]);
